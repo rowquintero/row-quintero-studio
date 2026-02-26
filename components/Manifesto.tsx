@@ -33,23 +33,8 @@ export default function Manifesto() {
       </motion.div>
 
       {/* Overlay oscuro degradado */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-bg-primary/80 via-black/70 to-bg-primary/80" />
+      <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.8), #062520b3, rgba(0,0,0,0.8))' }} />
 
-      {/* Líneas decorativas laterales */}
-      <motion.div
-        initial={{ scaleY: 0 }}
-        animate={isInView ? { scaleY: 1 } : {}}
-        transition={{ duration: 1.2, ease: 'easeOut' }}
-        style={{ originY: 0 }}
-        className="absolute left-10 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-accent-primary/40 to-transparent z-20"
-      />
-      <motion.div
-        initial={{ scaleY: 0 }}
-        animate={isInView ? { scaleY: 1 } : {}}
-        transition={{ duration: 1.2, ease: 'easeOut', delay: 0.2 }}
-        style={{ originY: 0 }}
-        className="absolute right-10 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-accent-primary/40 to-transparent z-20"
-      />
 
       {/* Content */}
       <div className="relative z-20 max-w-5xl mx-auto px-6 text-center">

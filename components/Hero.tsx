@@ -23,8 +23,18 @@ export default function Hero() {
           {/* Label */}
           <motion.div variants={fadeUp} transition={{ duration: 0.6 }} className="mb-6 flex justify-center">
             <span className="inline-flex items-center gap-2 font-mulish text-sm font-medium text-accent-primary border border-accent-primary/30 bg-accent-primary/10 px-4 py-1.5 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-primary" />
-              Tu aliado estratégico
+              {/* Icono de calendario animado */}
+              <motion.svg
+                className="w-3.5 h-3.5 text-accent-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                animate={{ rotate: [0, -8, 8, -8, 0] }}
+                transition={{ duration: 1.2, repeat: Infinity, repeatDelay: 3, ease: 'easeInOut' }}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </motion.svg>
+              Agenda abierta Q2 y Q3
             </span>
           </motion.div>
 
@@ -49,15 +59,35 @@ export default function Hero() {
           {/* CTA */}
           <motion.div variants={fadeUp} transition={{ duration: 0.6 }} className="flex justify-center">
             <motion.a
-              href="#contacto"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 font-mulish font-semibold text-text-dark bg-accent-primary px-8 py-4 rounded-full text-base"
+              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1uG87fyap5VrsET7KnOAmyzBv54flCcwsXBCOXKfFKixdsAej8NrKvGeterTzO0t327gBNfKmy?gv=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="group relative inline-flex items-center gap-3 font-mulish font-semibold text-text-dark bg-accent-primary px-8 py-4 rounded-full text-base overflow-hidden"
+              style={{ boxShadow: '0 0 24px rgba(218,255,152,0.35)' }}
             >
+              {/* Shimmer */}
+              <motion.span
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.45) 50%, transparent 60%)',
+                  backgroundSize: '200% 100%',
+                }}
+                animate={{ backgroundPosition: ['200% 0', '-200% 0'] }}
+                transition={{ duration: 2.2, repeat: Infinity, repeatDelay: 1.5, ease: 'easeInOut' }}
+              />
               Agendar llamada de claridad
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <motion.svg
+                className="w-4 h-4 relative z-10"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                animate={{ x: [0, 3, 0] }}
+                transition={{ duration: 1.4, repeat: Infinity, repeatDelay: 2, ease: 'easeInOut' }}
+              >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              </motion.svg>
             </motion.a>
           </motion.div>
         </motion.div>

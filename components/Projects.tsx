@@ -42,42 +42,46 @@ export default function Projects() {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.15 + i * 0.15 }}
+              whileHover={{ y: -6 }}
+              style={{ transition: 'box-shadow 0.3s ease' }}
+              className="rounded-2xl"
             >
               <Link
                 href={`/proyectos/${project.slug}`}
-                className="group rounded-2xl overflow-hidden border border-white/10 cursor-pointer flex flex-col h-full block"
+                className="group relative rounded-2xl overflow-hidden block h-80 ring-1 ring-white/10 hover:ring-accent-primary/60 transition-all duration-300"
+                style={{ boxShadow: '0 0 0 0 transparent' }}
               >
-                {/* Cover image */}
-                <div className="relative w-full h-56 overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.client}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/80 via-transparent to-transparent" />
+                {/* Imagen de fondo completa */}
+                <Image
+                  src={project.image}
+                  alt={project.client}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
 
-                  {/* Metric badge */}
-                  <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-2 text-center">
-                    <p className="font-anton text-2xl text-white leading-none">{project.metric}</p>
-                    <p className="font-mulish text-[10px] text-white/50 mt-0.5">{project.metricLabel}</p>
-                  </div>
+                {/* Gradiente oscuro en la parte inferior */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
+
+                {/* Glow overlay al hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-accent-primary/10 to-transparent pointer-events-none" />
+
+                {/* Metric badge */}
+                <div className="absolute top-4 right-4 bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-3 py-1.5 text-center transition-all duration-300 group-hover:border-accent-primary/30">
+                  <p className="font-anton text-xl text-white leading-none">{project.metric}</p>
+                  <p className="font-mulish text-[9px] text-white/60">{project.metricLabel}</p>
                 </div>
 
-                {/* Content */}
-                <div className="p-6 bg-white/5 flex flex-col flex-1">
-                  <span className={`inline-block font-mulish text-xs font-semibold border px-3 py-1 rounded-full mb-4 w-fit ${project.tagColor}`}>
+                {/* Contenido superpuesto en la parte inferior */}
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <span className={`inline-block font-mulish text-[10px] font-semibold border px-2.5 py-0.5 rounded-full mb-2 ${project.tagColor}`}>
                     {project.tag}
                   </span>
-                  <h3 className="font-anton text-2xl text-white uppercase mb-3">
+                  <h3 className="font-anton text-2xl text-white uppercase leading-tight mb-1">
                     {project.client}
                   </h3>
-                  <p className="font-mulish text-sm text-text-on-dark leading-relaxed flex-1">
-                    {project.result}
-                  </p>
-                  <div className="mt-6 flex items-center gap-2 text-accent-primary font-mulish text-sm font-semibold group-hover:gap-4 transition-all duration-200">
-                    <span>Ver caso de estudio</span>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center gap-1.5 text-accent-primary font-mulish text-xs font-semibold opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                    <span>Ver caso</span>
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </div>

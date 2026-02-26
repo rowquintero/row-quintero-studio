@@ -8,7 +8,7 @@ const navLinks = [
   { label: 'Inicio', href: '#' },
   { label: 'Servicios', href: '#servicios' },
   { label: 'Proyectos', href: '#proyectos' },
-  { label: 'Agenda una llamada', href: '#contacto' },
+  { label: 'Agenda una llamada', href: 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1uG87fyap5VrsET7KnOAmyzBv54flCcwsXBCOXKfFKixdsAej8NrKvGeterTzO0t327gBNfKmy?gv=true' },
 ]
 
 export default function Footer() {
@@ -68,7 +68,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/rowquintero/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 font-mulish text-sm text-text-on-dark hover:text-white transition-colors duration-200"
@@ -81,7 +81,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/rowquintero/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 font-mulish text-sm text-text-on-dark hover:text-white transition-colors duration-200"
@@ -102,7 +102,9 @@ export default function Footer() {
             © 2025 Row Quintero Studio. Todos los derechos reservados.
           </p>
           <motion.a
-            href="#contacto"
+            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1uG87fyap5VrsET7KnOAmyzBv54flCcwsXBCOXKfFKixdsAej8NrKvGeterTzO0t327gBNfKmy?gv=true"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="font-mulish text-xs font-semibold bg-accent-primary text-text-dark px-4 py-2 rounded-full"

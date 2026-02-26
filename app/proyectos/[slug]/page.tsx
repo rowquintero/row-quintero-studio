@@ -155,9 +155,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
       {/* ── Gallery ── */}
       <section className="max-w-7xl mx-auto px-6 py-24">
-        <span className="font-mulish text-xs font-semibold text-accent-primary uppercase tracking-widest block mb-12">
-          Galería
-        </span>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {project.gallery.map((src, i) => (
             <div

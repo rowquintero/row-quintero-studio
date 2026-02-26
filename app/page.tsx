@@ -14,7 +14,7 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
-      <Authority />
+      {/* <Authority /> */}
       <Services />
       <Projects />
       <Manifesto />
