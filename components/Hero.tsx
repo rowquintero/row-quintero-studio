@@ -53,7 +53,7 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="font-mulish text-base lg:text-lg text-text-on-dark leading-relaxed mb-10 max-w-xl mx-auto"
           >
-            10 años de experiencia impulsados con IA para lanzar tus ideas con agilidad.
+            10 años de experiencia en diseño impulsados con IA para lanzar tus ideas con agilidad e ingenio.
           </motion.p>
 
           {/* CTA */}

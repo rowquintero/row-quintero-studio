@@ -24,7 +24,10 @@
       "Bash(/dev/null grep -r \"mcpServers\\\\|figma\" ~/.claude/)",
       "Bash(find:*)",
       "Bash(head -20 ls -la ~/.claude/*.json)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(git add app/page.tsx app/proyectos/[slug]/page.tsx components/CTAFinal.tsx components/Footer.tsx components/Hero.tsx components/Manifesto.tsx components/Navbar.tsx components/Projects.tsx package-lock.json package.json)",
+      "Bash(git commit -m \"$\\(cat <<'EOF'\nfeat: mejoras visuales y enlaces de contacto\n\n- Eliminar líneas decorativas laterales en sección Manifiesto\n- Cambiar color del overlay en Manifiesto a #062520b3 \\(70%\\)\n- Agregar enlace de Google Calendar a todos los botones de agendar\n- Actualizar enlace de Instagram a rowquintero\n- Actualizar enlace de LinkedIn a rowquintero\n- Eliminar título \"Galería\" en página de detalle de caso de éxito\n- Agregar efecto hover con elevación, glow y borde en cards de proyectos\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push origin develop)"
     ]
   }
 }
